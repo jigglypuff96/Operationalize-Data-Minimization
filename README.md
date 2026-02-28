@@ -71,6 +71,15 @@ python data_minimization_pipeline_clean_anon.py \
   "abstract_map": {"Alice": "an individual", "NYC": "a large US city"}
 }
 ```
+---
+
+## Sensitivity Comparator
+
+The [sensitivity comparator](https://huggingface.co/seazon96/privacy-comparator) used in this pipeline is now publicly available:
+
+This model can be used as a drop-in replacement for the internal comparator originally deployed in our experiments.
+
+Note that certain infrastructure details (e.g., original deployment setup) are not included, but the released model enables reproducible sensitivity ranking for the pipeline.
 
 ---
 
@@ -90,16 +99,6 @@ python data_minimization_pipeline_clean_anon.py \
 
 * **WildChat / open‑ended**: keep the LLM utility judge (already in the script).
 * **MedQA / close‑ended**: do not use an LLM judge. Compare answers directly to gold labels (exact match or EM/F1). This change is limited to the `utility_eval(...)` path.
-
----
-
-## Heads-up (sensitivity comparator)
-
-The [sensitivity comparator](https://huggingface.co/seazon96/privacy-comparator) used in this pipeline is now publicly available:
-
-This model can be used as a drop-in replacement for the internal comparator originally deployed in our experiments.
-
-Note that certain infrastructure details (e.g., original deployment setup) are not included, but the released model enables reproducible sensitivity ranking for the pipeline.
 
 ---
 
