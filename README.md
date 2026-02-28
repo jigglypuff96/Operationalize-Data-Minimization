@@ -1,11 +1,21 @@
+# Data Minimization Pipeline
 
+This pipeline hides PII in prompts while keeping the task solvable.
+It was built for **WildChat** (open‑ended). It also works for similar open‑ended datasets.
+For close‑ended datasets (e.g., MedQA), see the note at the end.
+
+---
+
+## What it does
+
+* Get a baseline answer from your chosen model.
+* Try masking each PII item:
 
   * **redact** → e.g., `[PERSON1]`
   * **abstract** → e.g., `an individual`
 * Keep changes that still let the model answer well.
 * Search small edits to reduce exposure further.
 * Save the final masked prompt and the mapping.
-
 ---
 
 ## Files
